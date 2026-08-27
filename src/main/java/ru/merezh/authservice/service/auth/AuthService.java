@@ -74,16 +74,14 @@ public class AuthService {
             throw new AuthException("Проблема с получением данных");
         }
 
-        if (userAuthRepository.existsUserAuthsById(response.id())) {
-            userAuthRepository.deleteById(response.id());
-        }
-
         TokensDto tokens = jwtService.getTokens(response.id(), response.role());
+        String hashToken = hashToken(tokens.refreshToken());
 
-        userAuthRepository.save(new UserAuth(
-                response.id(),
-                hashToken(tokens.refreshToken())
-        ));
+        UserAuth userAuth = userAuthRepository.getUserAuthsById(response.id())
+                .orElse(new UserAuth(response.id(), hashToken));
+
+        userAuth.setTokenHash(hashToken);
+        userAuthRepository.save(userAuth);
 
         return tokens;
     }
