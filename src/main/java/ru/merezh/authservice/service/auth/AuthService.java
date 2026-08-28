@@ -78,7 +78,7 @@ public class AuthService {
         String hashToken = hashToken(tokens.refreshToken());
 
         UserAuth userAuth = userAuthRepository.getUserAuthsById(response.id())
-                .orElse(new UserAuth(response.id(), hashToken));
+                .orElseGet(() -> new UserAuth(response.id(), hashToken));
 
         userAuth.setTokenHash(hashToken);
         userAuthRepository.save(userAuth);
