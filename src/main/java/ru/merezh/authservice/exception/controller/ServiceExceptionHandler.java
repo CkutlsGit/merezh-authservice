@@ -1,5 +1,6 @@
 package ru.merezh.authservice.exception.controller;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +11,7 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
 @RestControllerAdvice
+@Order(1)
 public class ServiceExceptionHandler {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
