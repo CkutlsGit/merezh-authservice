@@ -18,11 +18,6 @@ import java.rmi.UnknownHostException;
 @Order(3)
 public class ServerExceptionHandler {
 
-    @ExceptionHandler(UnknownHostException.class)
-    public ResponseEntity<String> unknownHostExceptionHandler() {
-        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Неизвестный сервис, подключение не удалось");
-    }
-
     @ExceptionHandler(SocketTimeoutException.class)
     public ResponseEntity<String> socketTimeoutExceptionHandler() {
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Не удалось подключиться к сервису и получить данные");
