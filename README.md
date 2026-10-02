@@ -2,7 +2,7 @@
 
 Microservice responsible for authentication, authorization, and token management.
 
-📖 In Russian: [перевод на русский](#)
+📖 In Russian: [перевод на русский](https://github.com/CkutlsGit/merezh-authservice/blob/main/README.ru.md)
 
 ## 📋 Overview
 
