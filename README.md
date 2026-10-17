@@ -15,7 +15,7 @@ The service does **not store user passwords** - it only hashes them with BCrypt 
 **Backend**
 
 - Java 21 - core language
-- Spring Boot 3 - application framework
+- Spring Boot 4 - application framework
 - Spring Data JPA - database access and ORM
 - Spring Security Crypto - BCrypt password encoder
 - RestTemplate - synchronous HTTP calls to User Service
