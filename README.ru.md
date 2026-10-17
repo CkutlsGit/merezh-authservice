@@ -13,7 +13,7 @@ Auth Service - это микросервис на Spring Boot, который п
 **Backend**
 
 - Java 21 - основной язык
-- Spring Boot 3 - фреймворк приложения
+- Spring Boot 4 - фреймворк приложения
 - Spring Data JPA - доступ к БД и ORM
 - Spring Security Crypto - BCrypt для хэширования паролей
 - RestTemplate - синхронные HTTP-вызовы к User Service
